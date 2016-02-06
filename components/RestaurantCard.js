@@ -1,10 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 export default class RestaurantCard extends React.Component {
-
 	render() {
 		return (
-			<div>Card</div>
+			<div>{this.props.name}</div>
 		)
 	}
 }

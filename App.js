@@ -1,17 +1,17 @@
-import React from 'react';
-import RestaurantList from './components/RestaurantList';
+import React from 'react'
+import RestaurantList from './components/RestaurantList'
 
 export default class App extends React.Component {
 
   constructor() {
-    super();
+    super()
   }
 
   render() {
     return (
-    	<div>
-    		<RestaurantList />
-    	</div>
+      <div>
+        <RestaurantList />
+      </div>
 		)
   }
 }
