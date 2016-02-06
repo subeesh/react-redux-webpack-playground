@@ -13,13 +13,14 @@ export default class App extends React.Component {
   }
 
   componentWillMount() {
-    fetch(API + '/search?entity_id=1', {
+    fetch(API + '/search?entity_id=200', {
       headers: {
         'Accept': 'application/json',
         'user_key': API_KEY
       }
     }).then(response => response.json())
       .then((data) => {
+        console.log(data)
         this.setState({
           restaurants: data.restaurants
         })
@@ -31,6 +32,6 @@ export default class App extends React.Component {
       <div>
         <RestaurantList restaurants={this.state.restaurants} />
       </div>
-		)
+    )
   }
 }

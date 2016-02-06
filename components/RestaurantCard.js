@@ -4,8 +4,8 @@ export default class RestaurantCard extends React.Component {
   render() {
     return (
       <section>
-        <div>{this.props.data.name}</div>
-        <img src={this.props.data.thumb}/>
+        <h1>{this.props.data.name}</h1>
+        <img src={this.props.data.featured_image}/>
       </section>
     )
   }

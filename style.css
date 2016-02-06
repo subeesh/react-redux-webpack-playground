@@ -1,0 +1,25 @@
+body{
+  background: #E2E2E2;
+  margin: 20px 30px 20px 20px;
+}
+
+section {
+  background: white;
+  border-radius: 6px;
+  margin: 0 0 10px 0;
+  max-width: 920px;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+h1{
+  position: absolute;
+  padding: 5px 10px 5px 25px;
+  background-color: white;
+  border-color: black;
+  font-size: 26px;
+}
