@@ -4,6 +4,8 @@
   "description": "Messing up with react redux es6 and webpack",
   "main": "index.js",
   "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },

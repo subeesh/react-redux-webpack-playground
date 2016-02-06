@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import React from 'react'//eslint-disable-line
 import ReactDOM from 'react-dom'
 import App from './App'
