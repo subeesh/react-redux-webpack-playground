@@ -52,3 +52,24 @@ export function fetchRestaurants(location) {
       })
   }
 }
+
+function shouldFetchRestaurants(state, location) {
+  const restaurants = state.restaurantsByLocation[location]
+  if(!restaurants) {
+    return true
+  }
+  else if(restaurants.isFetching) {
+    return false
+  }
+  else {
+    return restaurants.didInvalidate
+  }
+}
+
+export function fetchRestaurantsIfNeeded(location){
+  return (dispatch, getState) => {
+    if(shouldFetchRestaurants(getState(), location)) {
+      dispatch(fetchRestaurants(location))
+    }
+  }
+}
