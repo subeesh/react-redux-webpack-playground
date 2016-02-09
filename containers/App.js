@@ -1,22 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchRestaurantsIfNeeded,
-  invalidateLocation
+  invalidateLocation,
+  selectLocation
 } from '../actions'
 
 import RestaurantList from '../components/RestaurantList'
+import LocationSelector from '../components/LocationSelector'
 
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   componentDidMount() {
     const { selectedLocation, dispatch } = this.props
+    dispatch(selectLocation(selectedLocation))
     dispatch(fetchRestaurantsIfNeeded(selectedLocation))
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
   }
 
   handleRefreshClick(event) {
@@ -27,11 +35,20 @@ class App extends Component {
     dispatch(fetchRestaurantsIfNeeded(selectedLocation))
   }
 
+  handleChange (nextLocation) {
+    this.props.dispatch(selectLocation(nextLocation))
+    this.props.dispatch(fetchRestaurantsIfNeeded(nextLocation))
+  }
+
   render() {
-    const { lastUpdated, isFetching, items } = this.props
+    const { selectedLocation, lastUpdated, isFetching, items } = this.props
     const isEmpty = items.length == 0
     return (
       <div>
+        <LocationSelector
+          value={selectedLocation}
+          onChange={this.handleChange}
+          options={[1,2,3,4,5,6,7]}/>
         <p>
           {lastUpdated &&
             <span>

@@ -40,7 +40,7 @@ export function fetchRestaurants(location) {
 
     dispatch(requestRestaurants(location))
 
-    return fetch(API + '/search?entity_id=' + location, {
+    return fetch(API + '/search?entity_id=' + location + '&entity_type=city', {
       headers: {
         'Accept': 'application/json',
         'user_key': API_KEY

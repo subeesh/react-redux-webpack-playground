@@ -56,7 +56,7 @@ function restaurantsByLocation(state = {}, action) {
 }
 
 const rootReducer = combineReducers({
-  restaurants,
+  selectedLocation,
   restaurantsByLocation
 })
 

@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 
 var definePlugin = new webpack.DefinePlugin({
-  API: JSON.stringify('http://localhost:8080/https://developers.zomato.com/api/v2.1'),
+  API: JSON.stringify('https://mighty-savannah-56586.herokuapp.com/https://developers.zomato.com/api/v2.1'),
   API_KEY: JSON.stringify(process.env.ZOMATO_API_KEY)
 })
 
